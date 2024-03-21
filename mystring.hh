@@ -3,7 +3,7 @@ class mystring{
 private:
     int size;
     char* sentance;
-public;
+public:
     //default constructor 
     mystring();
 
@@ -19,11 +19,13 @@ public;
     //operator overloading 
     mystring& operator=(const mystring&);
     mystring operator+(const mystring);
-    bool operator<(const mystring);
-    bool operator>(const mystring);
-    bool operator==(const mystring);
-    bool operator>=(const mystring);
-    bool operator<=(const mystring);
+    friend std::ostream& operator<<(std::ostream& os, const mystring& str);
+    //std::ostream& operator<<(std::ostream& os);
+    bool operator<(const mystring&) const;
+    bool operator>(const mystring&) const;
+    bool operator==(const mystring&) const;
+    bool operator>=(const mystring&) const;
+    bool operator<=(const mystring&) const;
     char operator[](int index);
 
     //length function
